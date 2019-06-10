@@ -13,7 +13,7 @@
 
 ArrayList <PVector> points = new ArrayList <PVector> ();
 
-boolean Jittery = false;
+boolean jitter = false;
 
 void setup() {
   size(1024,512);
@@ -49,7 +49,7 @@ void draw() {
   for (int i=1; i<points.size(); i++) {
     PVector p1 = points.get(i-1);
 
-    if (Jittery == true) {
+    if (jitter == true) {
       if (i > 5) {
         p1 = points.get(i-int(random(1,5)));
       }
@@ -72,9 +72,9 @@ void draw() {
 
 void keyPressed( ){
   if (key == 'j') {
-    Jittery = true;
+    jitter = true;
   } else if (key == 'k') {
-    Jittery = false;
+    jitter = false;
   } else if (key == 'n') {
     points = new ArrayList <PVector> ();
     setup();
